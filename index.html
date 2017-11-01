@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Your Event - Your Date</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<style type="text/css">
+		/* 1. Style header/footer <div> so they are positioned as desired. */
+		#header-left {
+			position: absolute;
+			top: 0%;
+			left: 0%;
+		}
+		#header-right {
+			position: absolute;
+			top: 0%;
+			right: 0%;
+		}
+		#footer-left {
+			position: absolute;
+			bottom: 0%;
+			left: 0%;
+		}
+		#footer-right {
+			position: absolute;
+			bottom: 0%;
+			right: 0%;
+		}
+
+	</style>
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+
+	<!-- 2. Create hidden header/footer <div> -->
+	<div id="hidden" style="display:none;">
+		<div id="header">
+			<div id="header-left"><img src="images/SN_Twitter_profile_image.png" width="150" height="150" /></div>
+			<div id="footer-right">developer.servicenow.com</div>
+			<div id="footer-left">@&lt;Twitter_Handle&gt;</div>
+		</div>
+	</div>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>Your Event Here</h2>
+				<h2>Your Date<h2>
+				<h3>Title of Presentation</h3>
+				<p>
+					<small>Your Info Line <a href="http://twitter.com/">@D&lt;Twitter_Handle&gt;</a></small>
+				</p>
+			</section>
+
+			<section>
+				<h2>developer.servicenow.com</h2>
+				<h3>Docs, Training, Free Instances</h3>
+				<img src="images/SN_Twitter_Cover_Image.png" /> 
+
+			</section>
+			<section>
+				<h2>Developer Portal Learning Plans</h2>
+				<h3>Choose your persona and progress through curated path</h3>
+				<ul>
+					<span class="fragment"><li>Client-side and Server-side scripting</li></span>
+					<span class="fragment"><li>Security</li></span>
+					<span class="fragment"><li>Business logic</li></span>
+					<span class="fragment"><li>Service Portal</li></span>					
+				</ul>
+				<h3 class="fragment">Developer Portal -> Learn -> Learning Plans</h3>				
+			</section>
+
+			<section >
+				<span>
+					<h2>Agenda</h2>
+
+					<ul>
+						<span class="fragment"><li>Topic 1</li></span>
+						<span class="fragment"><li>Topic 2</li></span>
+						<span class="fragment"><li>Topic 3</li></span>
+					</ul>
+				</span>
+				<aside class="notes">These are speaker notes</aside>
+			</section>
+
+
+
+			<section>
+				<h2>Live Coding Happy Hour</h2>
+				<ul>
+					<span class="fragment"><li>Most Fridays</li></span>	
+					<span class="fragment"><li>Pick your favorite beverage</li></span>
+					<span class="fragment"><li>Unscripted</li></span>
+					<span class="fragment"><li>Suggest topics!</li></span>
+					<span class="fragment"><li>Watch Twitter for updates</li></span>
+					<span class="fragment"><li>Subscribe at <a href="http://bit.ly/ServiceNowDevChannel">youtube.com/ServiceNowDevProgram</a></li></span>
+				</ul>
+			</section>
+
+			<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+				<h2 class="fragment">There are wonderful things in here!</h2>
+				<h2  class="fragment">Let's build something impressive! </h2>
+			</section> 
+			<section>
+				<h2>Questions?</h2>
+				<img src="images/EinsteinQuestionEverything.png"  />
+
+			</section>
+
+			<section>
+				<h1>Thank You!</h1>
+				<h2>@&lt;Twitter_Handle&gt;</h2>
+				<h2>email</h2>
+			</section>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				controls: true,
+				progress: true,
+				center: true,
+				
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+		</script>
+		<script src="scripts/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript">
+
+    // 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+    var header = $('#header').html();
+
+    if ( window.location.search.match( /print-pdf/gi ) ) {
+    	Reveal.addEventListener( 'ready', function( event ) {
+    		$('.slide-background').append(header);
+    	});
+    }
+    else {
+    	$('div.reveal').append(header);
+    }
+    Reveal.addEventListener( 'demo', function() {
+    	console.log( '"demo" has fired' );
+    	setTimeout(function(){
+		var pop = window.open('http://helsinki', 'demo'); // opens in new tab on most browsers
+	}, 1000);
+    } );
+
+    Reveal.configure({
+    	keyboard: {
+				40: 'next', // go to the next slide when the Inateck down key is pressed
+				38: 'prev' // go to the previous slide when the up
+			}});
+
+		</script>
+	</body>
+	</html>
